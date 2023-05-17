@@ -35,6 +35,12 @@ func TestAddTwoNumbers(t *testing.T) {
 			n2: 123,
 			ans: 133,
 		},
+		{
+			name: "wrong test 1",
+			n1: 1,
+			n2: 2,
+			ans: 100,
+		},
 	}
 	
 	for _, i := range(tableTest) {
