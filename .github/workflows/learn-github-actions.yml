@@ -9,17 +9,9 @@ jobs:
       - uses: actions/setup-go@v4
         with:
           go-version: '1.19' # The Go version to download (if necessary) and use.
-      - name: Build
+      - name: Install dependencies
         run: go get .
-        run: github.com/gin-gonic/gin
-        run: github.com/stretchr/testify
+      - name: Build
         run: go build .
-  test:
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-go@v4
-        with:
-          go-version: '1.19' # The Go version to download (if necessary) and use.
       - name: Test
         run: go test .
