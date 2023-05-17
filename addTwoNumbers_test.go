@@ -36,10 +36,10 @@ func TestAddTwoNumbers(t *testing.T) {
 			ans: 133,
 		},
 		{
-			name: "wrong test 1",
+			name: "5",
 			n1: 1,
 			n2: 2,
-			ans: 100,
+			ans: 3,
 		},
 	}
 	
