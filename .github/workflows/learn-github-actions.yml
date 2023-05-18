@@ -15,13 +15,3 @@ jobs:
         run: go build .
       - name: Test
         run: go test .
-      - name: Build container
-        env:
-          APP_NAME: githubactionstest
-        run: docker build -t githubactionstest .
-      - name: Login to registry
-        env:
-          action_secret: ${{ secrets.ACTION_SECRET }}
-        run: echo $action_secret | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
-      - name: Push to registry
-        run: docker push ghcr.io/ar2rworld/githubactionstest:0.0.1
