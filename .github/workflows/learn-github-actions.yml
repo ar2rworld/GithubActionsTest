@@ -16,7 +16,7 @@ jobs:
       - name: Test
         run: go test .
       - name: Build container
-        run: docker build -t GithubActionsTest .
+        run: docker build -t ${{ github.repository }} .
       - name: Login to registry
         env:
           action_secret: ${{ secrets.ACTION_SECRET }}
