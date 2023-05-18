@@ -24,4 +24,4 @@ jobs:
           action_secret: ${{ secrets.ACTION_SECRET }}
         run: echo $action_secret | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
       - name: Push to registry
-        run: docker push ghcr.io/${{ github.repository }}/:latest
+        run: docker push ghcr.io/ar2rworld/githubactionstest/:latest
