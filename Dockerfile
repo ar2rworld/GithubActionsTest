@@ -8,8 +8,8 @@ COPY go.mod go.sum ./
 RUN go mod download
 
 COPY *.go ./
-RUN CGO_ENABLED=0 GOOS=linux go build -o /$APP_NAME
+RUN CGO_ENABLED=0 GOOS=linux go build -o /githubactionstest
 
 EXPOSE 8080
 
-CMD [$APP_NAME]
+CMD ["/githubactionstest"]
