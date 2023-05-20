@@ -3,6 +3,8 @@ run-name: ${{ github.actor }} is learning GitHub Actions
 on:
   push:
     branches: ['master']
+env:
+  REGISTRY: ghcr.io
 jobs:
   build:
     runs-on: ubuntu-22.04
@@ -17,3 +19,9 @@ jobs:
         run: go build .
       - name: Test
         run: go test .
+      - name: Log in to the Container registry
+        uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.ACTIONS }}
