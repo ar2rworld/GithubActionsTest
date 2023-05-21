@@ -2,11 +2,12 @@ name: Create and publish a Docker image
 
 on:
   push:
-    branches: ['release']
+    branches: ['master', 'release']
 
 env:
   REGISTRY: ghcr.io
   ghcr_user: ${{ github.actor }}
+  IMAGE_NAME: ${{ github.repository }}
   CR_PAT: ${{ secrets.ACTION_SECRET }}
 
 jobs:
