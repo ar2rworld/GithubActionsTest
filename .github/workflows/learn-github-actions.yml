@@ -3,10 +3,6 @@ run-name: ${{ github.actor }} is learning GitHub Actions
 on:
   push:
     branches: ['master']
-env:
-  REGISTRY: ghcr.io
-  ghcr_user: ${{ github.actor }}
-  CR_PAT: ${{ secrets.ACTION_SECRET }}
 jobs:
   build:
     runs-on: ubuntu-22.04
@@ -21,6 +17,3 @@ jobs:
         run: go build .
       - name: Test
         run: go test .
-        
-      - name: Log in to the Container registry
-        run: echo "$CR_PAT" | docker login ghcr.io -u "$ghcr_user" --password-stdin
