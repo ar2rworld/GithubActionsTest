@@ -24,4 +24,4 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
-          password: ${{ secrets.actions }}
+          password: ${{ secrets.ACTION_SECRET }}
